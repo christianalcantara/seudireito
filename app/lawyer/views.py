@@ -8,8 +8,6 @@ def createaccount(request):
         form = LawyerCreationForm(request.POST)
         if form.is_valid():
             form.save()
-        else:
-            print(form.errors)
     else:
         form = LawyerCreationForm()
 

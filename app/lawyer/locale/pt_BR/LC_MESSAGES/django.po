@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-17 21:48+0000\n"
+"POT-Creation-Date: 2017-11-21 16:05-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: app/lawyer/forms.py:14
 msgid "The two password fields didn't match."
 msgstr "Os campos de senha não corresponderam."
@@ -34,7 +35,7 @@ msgid "Password confirmation"
 msgstr "Confirmação da senha"
 
 #: app/lawyer/forms.py:27
-msgid "Insira a mesma senha para confirmação."
+msgid "Enter the same password as before, for verification."
 msgstr ""
 
 #: app/lawyer/models.py:10
@@ -43,7 +44,8 @@ msgstr "Usuário"
 
 #: app/lawyer/models.py:12
 msgid "It is necessary to relate a user to the Lawyer to access the system."
-msgstr "É necessário relacionar um usuário com o advogado para acessar o sistema"
+msgstr ""
+"É necessário relacionar um usuário com o advogado para acessar o sistema"
 
 #: app/lawyer/models.py:15
 msgid "Name"
@@ -69,7 +71,7 @@ msgstr "Advogado"
 msgid "Lawyers"
 msgstr "Advogados"
 
-#: app/lawyer/templates/lawyer/create-account.html:19 app/lawyer/views.py:17
+#: app/lawyer/templates/lawyer/create-account.html:19 app/lawyer/views.py:15
 msgid "Create Account"
 msgstr "Registrar-se"
 
@@ -82,8 +84,8 @@ msgid ""
 "Phone numbers must be in either of the following formats: XX-XXXX-XXXX or XX-"
 "XXXXX-XXXX."
 msgstr ""
-"Os números de telefone devem estar em um dos seguintes formatos: XX-XXXX-XXXX ou XX-"
-"XXXXX-XXXX"
+"Os números de telefone devem estar em um dos seguintes formatos: XX-XXXX-"
+"XXXX ou XX-XXXXX-XXXX"
 
 #: app/lawyer/validators.py:31
 msgid "Invalid CPF number."

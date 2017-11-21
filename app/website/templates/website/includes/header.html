@@ -1,0 +1,45 @@
+{% load static i18n %}
+<header id="header" class="default-header colored flat-menu">
+    <div class="header-top">
+        <div class="container">
+            <nav>
+                <ul class="nav nav-pills nav-top">
+                    <li class="phone">
+                        <span><i class="fa fa-envelope"></i>info@universh.com</span>
+                    </li>
+                    <li class="phone">
+                        <span><i class="fa fa-phone"></i>(568) 456-7890</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search">
+                <form id="formSetLanguage" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                    <div class="btn-group" data-toggle="buttons">
+                        {% for language in languages %}
+                            <label class="btn{% if language.code == LANGUAGE_CODE %} active{% endif %}">
+                                <input type="radio" name="language" autocomplete="off" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}checked{% endif %}>
+                                {{ language.name_local }}
+                            </label>
+                        {% endfor %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="logo">
+            <a href="{% url 'website:index' %}">
+                <img alt="Universh" width="211" height="40" data-sticky-width="150" data-sticky-height="28"
+                     src="{% static 'website/images/default/logo.png' %}">
+            </a>
+        </div>
+        <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+    {% include 'website/includes/navbar.html' %}
+</header>

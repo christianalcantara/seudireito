@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-21 16:05-0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: app/website/templates/website/includes/slide.html:17
+#, python-format
+msgid ""
+"More than %(total_lawyers)s independent professionals are available to work "
+"on what you need"
+msgstr ""
+"Mais de %(total_lawyers)s profissionais independentes estão disponíveis para trabalhar "
+"no que você precisar"
+
+#: app/website/templates/website/includes/slide.html:26
+msgid "Hire the best lawyers in the world"
+msgstr "Contrate os melhores advogados do mundo"
+
+#: app/website/templates/website/includes/slide.html:33
+msgid "Request a professional"
+msgstr "Solicite um profissional"
+
+#: app/website/templates/website/includes/slide.html:40
+msgid "Create lawyer account"
+msgstr "Criar conta de advogado"
+
+#: app/website/templates/website/index.html:24
+msgid "Publish"
+msgstr "Publicar"
+
+#: app/website/templates/website/index.html:25
+msgid "Issue a work order"
+msgstr "Solicite um orçamento"
+
+#: app/website/templates/website/index.html:40
+msgid "Analyze"
+msgstr "Análise"
+
+#: app/website/templates/website/index.html:41
+msgid "Review the best proposal"
+msgstr "Revise a melhor proposta"
+
+#: app/website/templates/website/index.html:56
+msgid "Choice"
+msgstr "Escolha"
+
+#: app/website/templates/website/index.html:57
+msgid "Choose the best proposal"
+msgstr "Selecione a melhor proposta"
+
+#: seudireito/settings.py:133
+msgid "Brazil"
+msgstr "Brasil"
+
+#: seudireito/settings.py:134
+msgid "English"
+msgstr "Inglês"
+
+#: seudireito/urls.py:27
+msgid "^lawyer/"
+msgstr "^advogado/"
+
+#: seudireito/urls.py:28
+msgid "^company/"
+msgstr "^empresa/"
+
+#~ msgid "Create company account"
+#~ msgstr "Criar conta empresarial"

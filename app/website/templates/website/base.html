@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>Universh - Material Education, Events, News, Learning Centre & Kid School MultiPurpose HTML5 Template</title>
+		<meta name="keywords" content="Universh - Material Education, Events, News, Learning Centre & Kid School MultiPurpose HTML5 Template" />
+		<meta name="description" content="Universh - Material Education, Events, News, Learning Centre & Kid School MultiPurpose HTML5 Template">
+		<meta name="author" content="glorythemes.in">
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Favicon -->
+        <link rel="shortcut icon" href="images/default/favicon.png">
+        {# STYLESHEETS #}
+		{% include 'website/includes/style.html' %}
+	</head>
+<body>
+
+<!-- Page Loader -->
+<div id="pageloader">
+	<div class="loader-inner">
+		<img src="{% static 'website/images/default/preloader.gif' %}" alt="">
+	</div>
+</div><!-- Page Loader -->
+
+<!-- Back to top -->
+<a href="#0" class="cd-top">Top</a>
+
+<!-- End Theme Panel Switcher -->
+<div id="theme-panel" class="theme-panel close-theme-panel">
+	<!-- Panel Button -->
+	<a class="panel-button"><i class="fa uni-gear fa-spin"></i></a>
+
+	<!-- Panel Content -->
+	<div class="panel-content">
+
+		<!-- Options Content -->
+		<div class="config panel-btns config-layout">
+			<h5 class="title">Layout</h5>
+			<ul class="config-options">
+				<li><a id="layout-config-boxed" href="#">Boxed</a></li>
+				<li><a id="layout-config-wide" href="#">Wide</a></li>
+			</ul><!-- Options Config -->
+		</div><!-- Options Content -->
+
+		<!-- Options Content -->
+		<div class="config config-bg">
+			<h5 class="title">Boxed Backgrounds</h5>
+			<ul class="config-options">
+				<li><a id="bg-config-color" href="#"><img src="images/panel/boxed-solid.jpg"></a></li>
+				<li><a id="bg-config-pattern" href="#"><img src="images/panel/boxed-pattern.jpg"></a></li>
+				<li><a id="bg-config-image" href="#"><img src="images/panel/boxed-image.jpg"></a></li>
+			</ul><!-- Options Config -->
+		</div><!-- Options Content -->
+
+		<!-- Options Content -->
+		<div class="config config-demo">
+			<h5 class="title">Demos</h5>
+			<ul class="demos">
+				<li><a href="index-events.html"><img class="img-responsive" src="images/panel/demo-events.jpg"></a></li>
+				<li><a href="index-kids.html"><img class="img-responsive" src="images/panel/demo-kids.jpg"></a></li>
+				<li><a href="index.html"><img class="img-responsive" src="images/panel/demo-default.jpg"></a></li>
+				<li><a href="index-news.html"><img class="img-responsive" src="images/panel/demo-news.jpg"></a></li>
+				<li><a href="index-one-page.html"><img class="img-responsive" src="images/panel/demo-onepage.jpg"></a></li>
+			</ul><!-- Options Config -->
+		</div><!-- Options Content -->
+
+		<!-- Options Content -->
+		<div class="config panel-btns">
+			<ul class="config-options">
+				<li><a href="#">Buy Now</a></li>
+				<li><a href="http://glorythemes.in/html/universh/">Overview</a></li>
+			</ul><!-- Options Config -->
+		</div><!-- Options Content -->
+	</div><!-- Panel Content -->
+</div><!-- End Theme Panel Switcher -->
+
+
+<!-- Header Begins -->
+{% include 'website/includes/header.html' %}
+<!-- Header Ends -->
+
+<!-- Page Main -->
+<div role="main" {% block class_main %}class="main"{% endblock %}>
+    {% block main %}{% endblock main %}
+</div>
+<!-- Page Main -->
+
+<!-- Footer -->
+{% include 'website/includes/footer.html' %}
+<!-- Footer -->
+
+{# JAVASCRIPTS #}
+{% include 'website/includes/javascript.html' %}
+</body>
+</html>

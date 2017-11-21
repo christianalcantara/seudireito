@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'bootstrap3',
     # APPS
     'app.website',
-    'app.lawyer'
+    'app.lawyer',
+    'app.company',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,9 @@ USE_TZ = True
 
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'app', 'website', 'locale'),
+    os.path.join(BASE_DIR, 'app', 'lawyer', 'locale'),
+    os.path.join(BASE_DIR, 'app', 'company', 'locale'),
 )
 
 LANGUAGES = [

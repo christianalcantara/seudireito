@@ -1,0 +1,66 @@
+{% extends 'website/base.html' %}
+{% load i18n %}
+
+{% block main %}
+    <!-- Section Slide -->
+    {% include 'website/includes/slide.html' %}
+    <!-- Section -->
+
+	<!-- Section -->
+	<section class="pad-bottom-50 slider-below-section">
+		<div class="container">
+			<div class="slider-below-wrap bg-color typo-light">
+				<div class="row">
+					<!-- Column -->
+					<div class="col-sm-4">
+						<!-- Content Box -->
+						<div class="content-box text-center">
+							<!-- Icon Wraper -->
+							<div class="icon-wrap">
+								<i class="uni-letter-open"></i>
+							</div><!-- Icon Wraper -->
+							<!-- Content Wraper -->
+							<div class="content-wrap">
+								<h5 class="heading">{% trans 'Publish' %}</h5>
+								<p>{% trans 'Issue a work order' %}</p>
+							</div><!-- Content Wraper -->
+						</div><!-- Content Box -->
+					</div><!-- Column -->
+
+					<!-- Column -->
+					<div class="col-sm-4">
+						<!-- Content Box -->
+						<div class="content-box text-center">
+							<!-- Icon Wraper -->
+							<div class="icon-wrap">
+								<i class="uni-tactic"></i>
+							</div><!-- Icon Wraper -->
+							<!-- Content Wraper -->
+							<div class="content-wrap">
+								<h5 class="heading">{% trans 'Analyze' %}</h5>
+								<p>{% trans 'Review the best proposal' %}</p>
+							</div><!-- Content Wraper -->
+						</div><!-- Content Box -->
+					</div><!-- Column -->
+
+					<!-- Column -->
+					<div class="col-sm-4">
+						<!-- Content Box -->
+						<div class="content-box text-center">
+							<!-- Icon Wraper -->
+							<div class="icon-wrap">
+								<i class="uni-handshake"></i>
+							</div><!-- Icon Wraper -->
+							<!-- Content Wraper -->
+							<div class="content-wrap">
+								<h5 class="heading">{% trans 'Choice' %}</h5>
+								<p>{% trans 'Choose the best proposal' %}</p>
+							</div><!-- Content Wraper -->
+						</div><!-- Content Box -->
+					</div><!-- Column -->
+				</div><!-- Slider Below Wrapper -->
+			</div><!-- Row -->
+		</div><!-- Container -->
+	</section>
+    <!-- Section -->
+{% endblock %}
