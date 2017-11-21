@@ -1,0 +1,50 @@
+{% extends 'website/base.html' %}
+{% load static i18n bootstrap3 %}
+
+{% block class_main %}
+    class="main relative bg-img bg-cover overlay bg-color heavy"
+    data-background="{% static 'website/images/banner/bg-05.jpg' %}" data-stellar-background-ratio="0.5"
+{% endblock %}
+
+{% block main %}
+<div class="page-default typo-dark">
+		<!-- Container -->
+		<div class="container">
+			<!-- Row -->
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10 parent-has-overlay">
+					<ul class="template-box box-login">
+						<!-- Page Template Logo -->
+						<li class="logo-wrap  text-center">
+                            <h4 class="slogan">{% trans 'Create Account' %}</h4>
+                            {% bootstrap_form_errors form error_types='all' %}
+						</li><!-- Page Template Logo -->
+						<!-- Page Template Content -->
+						<li class="template-content text-left">
+							<div class="contact-form">
+								<!-- Form Begins -->
+								<form name="bootstrap-form" method="post" action="{% url 'company:create_account' %}">
+									{% csrf_token %}
+                                    <div class="row">
+                                        {% bootstrap_field form.type_of_company form_group_class="input-text form-group col-md-12" %}
+                                    </div>
+                                    <div class="row">
+                                        {% bootstrap_field form.name form_group_class="input-text form-group col-md-6" %}
+                                        {% bootstrap_field form.email form_group_class="input-text form-group col-md-6" %}
+                                    </div>
+                                    <div class="row">
+                                        {% bootstrap_field form.password1 form_group_class="input-text form-group col-md-6" %}
+                                        {% bootstrap_field form.password2 form_group_class="input-text form-group col-md-6" %}
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn btn-block" type="submit">{% trans 'Create my account' %}</button>
+                                    </div>
+								</form><!-- Form Ends -->
+							</div>
+						</li><!-- Page Template Content -->
+					</ul>
+				</div><!-- Column -->
+			</div><!-- Row -->
+		</div><!-- Container -->
+	</div>
+{% endblock %}

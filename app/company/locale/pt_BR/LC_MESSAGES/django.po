@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-21 13:49-0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: app/company/models.py:8 app/company/models.py:28
+msgid "Name"
+msgstr "Nome"
+
+#: app/company/models.py:14 app/company/models.py:32
+msgid "Type of company"
+msgstr "Ramo de Atividade"
+
+#: app/company/models.py:15
+msgid "Type of companies"
+msgstr "Ramos de Atividade"
+
+#: app/company/models.py:23
+msgid "User"
+msgstr "Usuário"
+
+#: app/company/models.py:25
+msgid "It is necessary to relate a user to the Company to access the system."
+msgstr ""
+"É necessário relacionar um usuário com a Empresa para acessar o sistema"
+
+#: app/company/models.py:38
+msgid "Email"
+msgstr "Email"
+
+#: app/company/models.py:43
+msgid "Company"
+msgstr "Empresa"
+
+#: app/company/models.py:44
+msgid "Companies"
+msgstr "Empresas"
+
+#: app/company/templates/company/create-account.html:19 app/company/views.py:15
+msgid "Create Account"
+msgstr "Criar conta"
+
+#: app/company/templates/company/create-account.html:40
+msgid "Create my account"
+msgstr "Criar minha conta"
