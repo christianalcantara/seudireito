@@ -150,10 +150,6 @@ LANGUAGES = [
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'seudireito', 'public', 'static')
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'seudireito', 'public', 'static'),
-)
 
 LOGIN_REDIRECT_URL = '/'
 
