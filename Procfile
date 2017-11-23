@@ -1,1 +1,1 @@
-web: gunicorn seudireito.wsgi_heroku
+web: gunicorn seudireito.wsgi --log-file -
