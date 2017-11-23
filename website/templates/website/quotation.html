@@ -28,19 +28,23 @@
                         <h5 class="widget-title">{% trans 'Proposal' %}<span></span></h5>
                         <p class="form-message1" style="display: none;"></p>
                         <div class="clearfix"></div>
-                        {% if not lawyer_proposal %}
-                            <p>{% trans 'Please, report the value of your proposal' %}:</p>
-                            <form class="input-group subscribe-form" method="post" action="{% url 'website:quotation' quotation.pk %}">
-                                {% csrf_token %}
-                                <div class="form-group has-feedback">
-                                    <input required class="form-control" type="number" step="0.01" placeholder="{% trans 'Value' %} ex: 125.25" value="" name="proposal_value">
-                                </div>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info" type="submit"><span class="glyphicon glyphicon-arrow-right"></span></button>
-                                </span>
-                            </form>
+                        {% if user.lawyer %}
+                            {% if not lawyer_proposal %}
+                                <p>{% trans 'Please, report the value of your proposal' %}:</p>
+                                <form class="input-group subscribe-form" method="post" action="{% url 'website:quotation' quotation.pk %}">
+                                    {% csrf_token %}
+                                    <div class="form-group has-feedback">
+                                        <input required class="form-control" type="number" step="0.01" placeholder="{% trans 'Value' %} ex: 125.25" value="" name="proposal_value">
+                                    </div>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-info" type="submit"><span class="glyphicon glyphicon-arrow-right"></span></button>
+                                    </span>
+                                </form>
+                            {% else %}
+                                <p>{% trans 'Your proposal number is' %}: {{ lawyer_proposal }}</p>
+                            {% endif %}
                         {% else %}
-                            <p>{% trans 'Your proposal number is' %}: {{ lawyer_proposal }}</p>
+                            <p><a href="{% url 'lawyer:create_account' %}">{% trans 'Create account' %}</a> to send proposal</p>
                         {% endif %}
                     </div>
                 </div>

@@ -34,15 +34,14 @@ def quotations(request):
     )
 
 
-@user_lawyer_required
 def quotation(request, pk):
     o_quotation = get_object_or_404(Quotation, pk=pk)
-    # get logged lawyer
-    lawyer = request.user.lawyer
-    # get lawyer proposal or false
     try:
+        # get logged lawyer
+        lawyer = request.user.lawyer
+        # get lawyer proposal or false
         lawyer_proposal = Proposal.objects.get(quotation=o_quotation, lawyer=lawyer)
-    except Proposal.DoesNotExist:
+    except Exception:
         lawyer_proposal = False
     if request.method == 'POST':
         proposal_value = Decimal(request.POST.get('proposal_value'))
