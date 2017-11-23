@@ -14,6 +14,8 @@ def createaccount(request):
         form = CompanyCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, _('Account created successfully'))
+            return HttpResponseRedirect(reverse('website:index'))
     else:
         form = CompanyCreationForm()
 

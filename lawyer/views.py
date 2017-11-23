@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, HttpResponseRedirect, reverse
 from django.utils.translation import ugettext_lazy as _
 
 from utils.decorators import user_lawyer_required
@@ -11,6 +12,8 @@ def createaccount(request):
         form = LawyerCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, _('Account created successfully'))
+            return HttpResponseRedirect(reverse('website:index'))
     else:
         form = LawyerCreationForm()
 
