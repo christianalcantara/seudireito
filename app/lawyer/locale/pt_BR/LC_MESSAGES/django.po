@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-22 01:19-0200\n"
+"POT-Creation-Date: 2017-11-23 04:45-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgstr "Confirmação da senha"
 
 #: app/lawyer/forms.py:27
 msgid "Enter the same password as before, for verification."
-msgstr ""
+msgstr "Insira a mesma senha para verificação"
 
 #: app/lawyer/models.py:10
 msgid "User"
@@ -71,29 +71,29 @@ msgstr "Advogado"
 msgid "Lawyers"
 msgstr "Advogados"
 
-#: app/lawyer/models.py:51
+#: app/lawyer/models.py:51 app/lawyer/templates/lawyer/proposals.html:29
 msgid "Quotation"
-msgstr ""
+msgstr "Ordem de serviço"
 
-#: app/lawyer/models.py:60
+#: app/lawyer/models.py:61
 msgid "Price"
-msgstr ""
+msgstr "Preço"
 
-#: app/lawyer/models.py:65
+#: app/lawyer/models.py:66
 #, fuzzy
 #| msgid "Create my account"
 msgid "Created date"
 msgstr "Criar minha conta"
 
-#: app/lawyer/models.py:71
-msgid "Proposal"
-msgstr ""
-
 #: app/lawyer/models.py:72
-msgid "Proposals"
-msgstr ""
+msgid "Proposal"
+msgstr "Proposta"
 
-#: app/lawyer/templates/lawyer/create-account.html:19 app/lawyer/views.py:15
+#: app/lawyer/models.py:73
+msgid "Proposals"
+msgstr "Propostas"
+
+#: app/lawyer/templates/lawyer/create-account.html:19 app/lawyer/views.py:16
 msgid "Create Account"
 msgstr "Registrar-se"
 
@@ -103,7 +103,37 @@ msgstr "Criar minha conta"
 
 #: app/lawyer/templates/lawyer/create-account.html:42
 msgid "click here"
-msgstr ""
+msgstr "clique aqui"
+
+#: app/lawyer/templates/lawyer/proposals.html:11
+msgid "Your proposals"
+msgstr "Suas propostas"
+
+#: app/lawyer/templates/lawyer/proposals.html:27
+msgid "Proposal date"
+msgstr "Data da proposta"
+
+#: app/lawyer/templates/lawyer/proposals.html:28
+msgid "Quotation date"
+msgstr "Data da Ordem de serviço"
+
+#: app/lawyer/templates/lawyer/proposals.html:30
+msgid "Quotation state"
+msgstr "Status da O.S"
+
+#: app/lawyer/templates/lawyer/proposals.html:31
+msgid "Delegate"
+msgstr "Delegado"
+
+#: app/lawyer/urls.py:7
+#, fuzzy
+#| msgid "Create Account"
+msgid "^createaccount/$"
+msgstr "Registrar-se"
+
+#: app/lawyer/urls.py:8
+msgid "^proposals/$"
+msgstr "^propostas/$"
 
 #: app/lawyer/validators.py:16
 msgid ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-22 01:19-0200\n"
+"POT-Creation-Date: 2017-11-23 04:45-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,29 +51,30 @@ msgstr "Empresa"
 msgid "Companies"
 msgstr "Empresas"
 
-#: app/company/models.py:57
+#: app/company/models.py:57 app/company/templates/company/quotations.html:11
 msgid "Title"
 msgstr ""
 
-#: app/company/models.py:61
+#: app/company/models.py:61 app/company/templates/company/quotations.html:12
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
-#: app/company/models.py:64
+#: app/company/models.py:64 app/company/templates/company/quotations.html:13
 msgid "State"
-msgstr ""
+msgstr "Status"
 
 #: app/company/models.py:67
 msgid "Created"
-msgstr ""
+msgstr "Criado"
 
 #: app/company/models.py:68
+#: app/company/templates/company/quotation-proposal.html:45
 msgid "Delegate"
-msgstr ""
+msgstr "Delegado"
 
 #: app/company/models.py:69
 msgid "Finished"
-msgstr ""
+msgstr "Finalizado"
 
 #: app/company/models.py:74
 #, fuzzy
@@ -83,13 +84,13 @@ msgstr "Criar minha conta"
 
 #: app/company/models.py:87
 msgid "Quotation"
-msgstr ""
+msgstr "Ordem de Serviço"
 
 #: app/company/models.py:88
 msgid "Quotations"
-msgstr ""
+msgstr "Ordens de Serviço"
 
-#: app/company/templates/company/create-account.html:19 app/company/views.py:15
+#: app/company/templates/company/create-account.html:19 app/company/views.py:20
 msgid "Create Account"
 msgstr "Criar conta"
 
@@ -99,8 +100,82 @@ msgstr "Criar minha conta"
 
 #: app/company/templates/company/create-account.html:42
 msgid "click here to login"
-msgstr ""
+msgstr "click aqui para acessar"
+
+#: app/company/templates/company/quotation-create.html:18
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: app/company/templates/company/quotation-create.html:19
+msgid "Save"
+msgstr "Salvar"
+
+#: app/company/templates/company/quotation-proposal.html:54
+msgid "Finish"
+msgstr "Finalizar"
+
+#: app/company/templates/company/quotation-proposal.html:64
+msgid "Lawyer"
+msgstr "Advogado"
+
+#: app/company/templates/company/quotation-proposal.html:68
+msgid "Price"
+msgstr "Preço"
+
+#: app/company/templates/company/quotations.html:14
+msgid "Date"
+msgstr "Data"
+
+#: app/company/templates/company/quotations.html:15
+msgid "Proposals"
+msgstr "Propostas"
+
+#: app/company/templates/company/quotations.html:16
+msgid "Actions"
+msgstr "Ações"
+
+#: app/company/templates/company/quotations.html:44
+msgid "View proposals"
+msgstr "Ver propostas"
 
 #: app/company/urls.py:7
 msgid "^createaccount/$"
 msgstr "^criar-conta/$"
+
+#: app/company/urls.py:8
+msgid "^quotations/$"
+msgstr "^ordem-servico/$"
+
+#: app/company/urls.py:9
+msgid "^quotation/create/$"
+msgstr "^ordem-servico/criar/$"
+
+#: app/company/urls.py:10
+msgid "^quotation/(?P<pk>[0-9]+)/proposals/$"
+msgstr "ordem-servico/(?P<pk>[0-9]+)/proposta/$"
+
+#: app/company/views.py:34
+msgid "Your quotations"
+msgstr ""
+
+#: app/company/views.py:53
+msgid "Quotation '{}' created successfully"
+msgstr "Ordem de serviço '{}' criada com sucesso"
+
+#: app/company/views.py:59
+#, fuzzy
+#| msgid "Create my account"
+msgid "Create quotation"
+msgstr "Criar minha conta"
+
+#: app/company/views.py:81
+msgid "Quotation '{}' finished"
+msgstr "Ordem de servico '{}' finalizada"
+
+#: app/company/views.py:86
+msgid "Proposal '{}' delegate"
+msgstr "Proposta '{}' delegada"
+
+#: app/company/views.py:90
+msgid "Quotation proposals"
+msgstr "Propostas da Ordem de serviço"
