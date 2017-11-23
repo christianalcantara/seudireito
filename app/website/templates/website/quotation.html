@@ -1,19 +1,7 @@
 {% extends 'website/base.html' %}
 {% load static i18n bootstrap3 %}
 {% block header %}
-    <div class="page-header sm">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <!-- Page Header Wrapper -->
-                    <div class="page-header-wrapper">
-                        <!-- Title & Sub Title -->
-                        <h5 class="title">{{ quotation }}</h5>
-                    </div><!-- Page Header Wrapper -->
-                </div><!-- Coloumn -->
-            </div><!-- Row -->
-        </div><!-- Container -->
-    </div>
+    {% include 'website/includes/block-header.html' %}
 {% endblock %}
 {% block main %}
     <section class="bg-grey pad-tb-30">

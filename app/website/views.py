@@ -24,7 +24,8 @@ def index(request):
 
 def quotations(request):
     ctx = {
-        'quotations': listing(request, Quotation.objects.filter(state='created'), 12)
+        'quotations': listing(request, Quotation.objects.filter(state='created'), 12),
+        'title': _('Quotations')
     }
     return render(
         request,
@@ -59,7 +60,8 @@ def quotation(request, pk):
             messages.error(request, _('Invalid value.'))
     ctx = {
         'quotation': o_quotation,
-        'lawyer_proposal': lawyer_proposal
+        'lawyer_proposal': lawyer_proposal,
+        'title': _('Quotation')
     }
     return render(
         request,
