@@ -29,9 +29,9 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     url(_(r'^login/$'), auth_views.login, name='login'),
     url(_(r'^logout/$'), auth_views.logout, name='logout'),
-    url(r'', include('app.website.urls', namespace='website')),
-    url(_(r'^lawyer/'), include('app.lawyer.urls', namespace='lawyer')),
-    url(_(r'^company/'), include('app.company.urls', namespace='company')),
+    url(r'', include('website.urls', namespace='website')),
+    url(_(r'^lawyer/'), include('lawyer.urls', namespace='lawyer')),
+    url(_(r'^company/'), include('company.urls', namespace='company')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
 )
 

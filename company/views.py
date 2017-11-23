@@ -1,11 +1,12 @@
-from django.shortcuts import render, reverse, HttpResponseRedirect, get_object_or_404
-from . models import Quotation
-from app.lawyer.models import Proposal
-from . forms import CompanyCreationForm, QuotationCreateForm
-from django.utils.translation import ugettext_lazy as _
-from utils.paginator import listing
-from utils.decorators import user_company_required
 from django.contrib import messages
+from django.shortcuts import render, reverse, HttpResponseRedirect, get_object_or_404
+from django.utils.translation import ugettext_lazy as _
+
+from lawyer.models import Proposal
+from utils.decorators import user_company_required
+from utils.paginator import listing
+from .forms import CompanyCreationForm, QuotationCreateForm
+from .models import Quotation
 
 
 def createaccount(request):
@@ -22,7 +23,7 @@ def createaccount(request):
     }
     return render(
         request,
-        'company/create-account.html',
+        'company/templates/company/create-account.html',
         ctx
     )
 
@@ -36,7 +37,7 @@ def quotations(request):
     }
     return render(
         request,
-        'company/quotations.html',
+        'company/templates/company/quotations.html',
         ctx
     )
 
@@ -61,7 +62,7 @@ def quotation_create(request):
     }
     return render(
         request,
-        'company/quotation-create.html',
+        'company/templates/company/quotation-create.html',
         ctx
     )
 
@@ -93,6 +94,6 @@ def quotation_proposals(request, pk):
     }
     return render(
         request,
-        'company/quotation-proposal.html',
+        'company/templates/company/quotation-proposal.html',
         ctx
     )
