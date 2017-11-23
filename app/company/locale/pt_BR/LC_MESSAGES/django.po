@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 16:05-0200\n"
+"POT-Creation-Date: 2017-11-22 01:19-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,13 +43,51 @@ msgstr ""
 msgid "Email"
 msgstr "Email"
 
-#: app/company/models.py:43
+#: app/company/models.py:43 app/company/models.py:52
 msgid "Company"
 msgstr "Empresa"
 
 #: app/company/models.py:44
 msgid "Companies"
 msgstr "Empresas"
+
+#: app/company/models.py:57
+msgid "Title"
+msgstr ""
+
+#: app/company/models.py:61
+msgid "Description"
+msgstr ""
+
+#: app/company/models.py:64
+msgid "State"
+msgstr ""
+
+#: app/company/models.py:67
+msgid "Created"
+msgstr ""
+
+#: app/company/models.py:68
+msgid "Delegate"
+msgstr ""
+
+#: app/company/models.py:69
+msgid "Finished"
+msgstr ""
+
+#: app/company/models.py:74
+#, fuzzy
+#| msgid "Create my account"
+msgid "Created date"
+msgstr "Criar minha conta"
+
+#: app/company/models.py:87
+msgid "Quotation"
+msgstr ""
+
+#: app/company/models.py:88
+msgid "Quotations"
+msgstr ""
 
 #: app/company/templates/company/create-account.html:19 app/company/views.py:15
 msgid "Create Account"
@@ -58,3 +96,11 @@ msgstr "Criar conta"
 #: app/company/templates/company/create-account.html:40
 msgid "Create my account"
 msgstr "Criar minha conta"
+
+#: app/company/templates/company/create-account.html:42
+msgid "click here to login"
+msgstr ""
+
+#: app/company/urls.py:7
+msgid "^createaccount/$"
+msgstr "^criar-conta/$"

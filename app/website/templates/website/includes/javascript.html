@@ -14,8 +14,8 @@
 <script src="{% static 'website/js/lib/jquery.prettyPhoto.js' %}"></script>
 <script src="{% static 'website/js/lib/jquery.stellar.min.js' %}"></script>
 <script src="{% static 'website/js/lib/menu.js' %}"></script>
-
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- Revolution Js -->
 <script src="{% static 'website/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
 <script src="{% static 'website/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
@@ -27,3 +27,16 @@
 
 <!-- Theme Custom -->
 <script src="{% static 'website/js/custom.js' %}"></script>
+
+{% if messages %}
+    <script>
+    {% for message in messages %}
+    toastr.{{ message.tags }}("{{ message }}", "{{ message.tags }}", {
+        "timeOut": "0",
+        "extendedTImeout": "0",
+        "closeButton": true,
+        "newestOnTop": true
+    });
+    {% endfor %}
+    </script>
+{% endif %}

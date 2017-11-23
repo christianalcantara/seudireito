@@ -1,0 +1,26 @@
+{% extends 'company/base.html' %}
+{% load i18n bootstrap3 %}
+
+{% block main %}
+    <section class="bg-grey pad-tb-30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    <form method="post" action="{% url 'company:quotation_create' %}">
+                        {% csrf_token %}
+                        <div class="row">
+                            {% bootstrap_field form.title form_group_class="input-text form-group" %}
+                        </div>
+                        <div class="row">
+                            {% bootstrap_field form.description form_group_class="input-text form-group" %}
+                        </div>
+                        <div class="row">
+                            <a class="btn btn-danger" href="{% url 'company:quotations' %}">{% trans 'Cancel' %}</a>
+                            <button class="btn btn-success" type="submit">{% trans 'Save' %}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

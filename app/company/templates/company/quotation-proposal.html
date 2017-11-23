@@ -1,0 +1,82 @@
+{% extends 'company/base.html' %}
+{% load static i18n bootstrap3 %}
+{% block main %}
+    <section class="pad-tb-30">
+        <div class="container">
+            <div class="row">
+                <div class="panel-group accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                {{ quotation }}
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <small class="label label-{{ quotation.state_color }}">{{ quotation.get_state_display }}</small>
+                                <p>{{ quotation.description }}</p>
+                                <p><i class="fa fa-calendar-o"></i> {{ quotation.created_date|date:"SHORT_DATE_FORMAT" }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for proposal in proposals %}
+                    <div class="col-sm-4">
+                        <div class="content-box shadow {% if quotation.delegated_to == proposal %}bg-success{% else %}bg-white{% endif %}">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h6 class="text-primary">
+                                    {{ proposal }}
+                                </h6>
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="pull-right">
+                                        {% if not quotation.delegated_to %}
+                                            <form method="post"
+                                                  action="{% url 'company:quotation_proposals' quotation.pk %}">{% csrf_token %}
+                                                <input type="hidden" name="action" value="delegate">
+                                                <input type="hidden" name="pk" value="{{ proposal.pk }}">
+                                                <button type="submit"
+                                                        class="btn btn-success btn-xs pull-right">{% trans 'Delegate' %}</button>
+                                            </form>
+                                        {% else %}
+                                            {% if quotation.delegated_to == proposal and quotation.state == 'delegate' %}
+                                                <form method="post"
+                                                      action="{% url 'company:quotation_proposals' quotation.pk %}">{% csrf_token %}
+                                                    <input type="hidden" name="action" value="finish">
+                                                    <input type="hidden" name="pk" value="{{ proposal.pk }}">
+                                                    <button type="submit"
+                                                            class="btn btn-success btn-xs pull-right">{% trans 'Finish' %}</button>
+                                                </form>
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table margin-none">
+                                <tbody>
+                                    <tr>
+                                        <th><strong>{% trans 'Lawyer' %}</strong></th>
+                                        <td>{{ proposal.lawyer }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th><strong>{% trans 'Price' %}</strong></th>
+                                        <td><strong><span class="amount text-danger">{{ proposal.price }}</span></strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <nav class="text-center">
+                {% bootstrap_pagination proposals %}
+            </nav>
+        </div>
+    </section>
+{% endblock %}

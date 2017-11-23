@@ -1,0 +1,66 @@
+{% extends 'company/base.html' %}
+{% load static i18n bootstrap3 %}
+{% block main %}
+    <section class="pad-tb-30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-0 col-md-11">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>{% trans 'Title' %}</th>
+								<th>{% trans 'Description' %}</th>
+								<th class="text-center">{% trans 'State' %}</th>
+								<th class="text-center">{% trans 'Date' %}</th>
+								<th class="text-center">{% trans 'Proposals' %}</th>
+                                <th>{% trans 'Actions' %}</th>
+							</tr>
+						</thead>
+						<tbody>
+                            {% for quotation in quotations %}
+							<tr>
+								<th style="min-width: 150px" scope="row">{{ quotation }}</th>
+								<td>{{ quotation.description }}</td>
+								<td class="text-center">
+                                    <span class="label label-{{ quotation.state_color }}">{{ quotation.get_state_display }}
+                                        {% if quotation.delegated_to %}: {{ quotation.delegated_to }} {% endif %}
+                                    </span>
+
+                                </td>
+								<td class="text-center">{{ quotation.created_date|date:"SHORT_DATE_FORMAT" }}</td>
+								{% with quotation.proposals.all.count as total_proposals %}
+                                <td class="text-center">
+                                    <span class="badge badge-info">{{ total_proposals }}</span>
+                                </td>
+                                <td class="text-center">
+                                    <div class="dropdown">
+                                        <button class="btn btn-success btn-sm dropdown-toggle"
+                                                type="button" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="true">
+                                            <i class="fa fa-bars"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li {% if not total_proposals %}class="disabled"{% endif %}>
+                                                <a href="{% if not total_proposals %}javascript:void(0){% else %}{% url 'company:quotation_proposals' quotation.pk %}{% endif %}">{% trans 'View proposals' %}</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Another action</a>
+                                            </li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                {% endwith %}
+							</tr>
+                        {% endfor %}
+						</tbody>
+					</table>
+				</div>
+            </div>
+            <nav class="text-center">
+                {% bootstrap_pagination quotations %}
+            </nav>
+        </div>
+    </section>
+{% endblock %}

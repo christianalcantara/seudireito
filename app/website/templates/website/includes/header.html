@@ -5,10 +5,10 @@
             <nav>
                 <ul class="nav nav-pills nav-top">
                     <li class="phone">
-                        <span><i class="fa fa-envelope"></i>info@universh.com</span>
+                        <span><i class="fa fa-envelope"></i>christian.douglas.alcantara@gmail.com</span>
                     </li>
                     <li class="phone">
-                        <span><i class="fa fa-phone"></i>(568) 456-7890</span>
+                        <span><i class="fa fa-phone"></i>(31)9.9550-4357</span>
                     </li>
                 </ul>
             </nav>
@@ -18,14 +18,16 @@
                     {% get_available_languages as LANGUAGES %}
                     {% get_language_info_list for LANGUAGES as languages %}
                     <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                    <div class="btn-group" data-toggle="buttons">
+                    <input name="language" type="hidden" value="{{ LANGUAGE_CODE }}"/>
+                    <select class="selectpicker" data-width="fit" data-style="btn btn-primary btn-sm" id="selectLanguage">
                         {% for language in languages %}
-                            <label class="btn{% if language.code == LANGUAGE_CODE %} active{% endif %}">
-                                <input type="radio" name="language" autocomplete="off" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}checked{% endif %}>
-                                {{ language.name_local }}
-                            </label>
+                            <option {% if language.code == LANGUAGE_CODE %}selected{% endif %}
+                                    data-content='<i class="flag-icon flag-icon-{{ language.code }}"></i> <span style="color: black;" >{{ language.name_local }}</span>'
+                                    name="sel_language"
+                                    value="{{ language.code }}">{{ language.name_local }}
+                            </option>
                         {% endfor %}
-                    </div>
+                    </select>
                 </form>
             </div>
         </div>

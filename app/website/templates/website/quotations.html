@@ -1,0 +1,52 @@
+{% extends 'website/base.html' %}
+{% load static i18n bootstrap3 %}
+{% block header %}
+    <div class="page-header sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- Page Header Wrapper -->
+                    <div class="page-header-wrapper">
+                        <!-- Title & Sub Title -->
+                        <h5 class="title">{% trans 'Quotations' %}</h5>
+                    </div><!-- Page Header Wrapper -->
+                </div><!-- Coloumn -->
+            </div><!-- Row -->
+        </div><!-- Container -->
+    </div>
+{% endblock %}
+{% block main %}
+    <section class="bg-grey pad-tb-30">
+        <div class="container">
+            <div class="row">
+                {% for quotation in quotations %}
+                    <!-- Item Begins -->
+                    <div class="col-sm-4  margin-bottom-30">
+                        <!-- Blog Grid Wrapper -->
+                        <div class="blog-wrap">
+                            <!-- Blog Detail Wrapper -->
+                            <div class="blog-details">
+                                <h5><a href="{% url 'website:quotation' quotation.pk %}">{{ quotation }}</a>
+                                    <small style="display: block">{{ quotation.company }}</small>
+                                </h5>
+
+                                <ul class="blog-meta">
+                                    <li>
+                                        <i class="fa fa-calendar-o"></i> {{ quotation.created_date|date:"SHORT_DATE_FORMAT" }}
+                                    </li>
+                                    <li><i class="fa fa-user"></i> {{ quotation.proposals.all.count }}</li>
+                                </ul><!-- Blog Meta -->
+                                <p>{{ quotation.description|truncatechars:100 }}</p>
+                                <a class="btn btn-primary" href="{% url 'website:quotation' quotation.pk %}">{% trans 'Read More' %}</a>
+                            </div><!-- Blog Detail Wrapper -->
+                        </div><!-- Blog Wrapper -->
+                    </div><!-- Column -->
+                {% endfor %}
+            </div><!-- Row -->
+            <nav class="text-center">
+                {% bootstrap_pagination quotations %}
+            </nav>
+        </div><!-- Container -->
+    </section><!-- Section -->
+
+{% endblock %}

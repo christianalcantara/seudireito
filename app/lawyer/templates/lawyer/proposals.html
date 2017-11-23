@@ -1,0 +1,67 @@
+{% extends 'website/base.html' %}
+{% load static i18n bootstrap3 %}
+{% block header %}
+    <div class="page-header sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- Page Header Wrapper -->
+                    <div class="page-header-wrapper">
+                        <!-- Title & Sub Title -->
+                        <h5 class="title">{% trans 'Your proposals' %}</h5>
+                    </div><!-- Page Header Wrapper -->
+                </div><!-- Coloumn -->
+            </div><!-- Row -->
+        </div><!-- Container -->
+    </div>
+{% endblock %}
+{% block main %}
+    <section class="bg-grey pad-tb-30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-9 parent-has-overlay">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th class="text-center">{% trans 'Proposal date' %}</th>
+								<th class="text-center">{% trans 'Quotation date' %}</th>
+								<th>{% trans 'Quotation' %}</th>
+								<th class="text-center">{% trans 'Quotation state' %}</th>
+								<th class="text-center">{% trans 'Delegate' %}</th>
+							</tr>
+						</thead>
+						<tbody>
+                            {% for proposal in proposals %}
+							<tr>
+								<th scope="row">
+                                    {{ proposal }}
+                                </th>
+								<td class="text-center">{{ proposal.created_date|date:"SHORT_DATE_FORMAT" }}</td>
+								<td class="text-center">{{ proposal.quotation.created_date|date:"SHORT_DATE_FORMAT" }}</td>
+								<td><a href="{% url 'website:quotation' proposal.quotation.pk %}">{{ proposal.quotation }}</a> </td>
+								<td class="text-center"><span class="label label-{{ proposal.quotation.state_color }}">{{ proposal.quotation.get_state_display }}</span></td>
+                                <td class="text-center">
+                                    {% if proposal.quotation.delegated_to == proposal %}
+                                        <i class="fa fa-check text-success"></i>
+                                    {% else %}
+                                        {% if proposal.quotation.state == 'created' %}
+                                            <i class="fa fa-clock-o text-primary"></i>
+                                        {% else %}
+                                            <i class="fa fa-remove text-danger"></i>
+                                        {% endif %}
+                                    {% endif %}
+                                </td>
+
+							</tr>
+                        {% endfor %}
+						</tbody>
+					</table>
+				</div>
+            </div>
+            <nav class="text-center">
+                {% bootstrap_pagination proposals %}
+            </nav>
+        </div>
+    </section>
+{% endblock %}

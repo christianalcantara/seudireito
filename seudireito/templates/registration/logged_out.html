@@ -1,0 +1,25 @@
+{% extends 'website/base.html' %}
+{% load static i18n %}
+
+{% block class_main %}
+    class="main relative bg-img bg-cover overlay bg-color heavy"
+    data-background="{% static 'website/images/banner/bg-03.jpg' %}" data-stellar-background-ratio="0.5"
+{% endblock %}
+
+{% block main %}
+<div class="page-default typo-dark">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-offset-4 col-md-4 parent-has-overlay">
+					<ul class="template-box box-login">
+						<li class="logo-wrap  text-center">
+                            <h4 class="slogan">{% trans 'Session closed' %}</h4>
+                            <h5 class="slogan text-primary">{% trans 'Thank you for visiting our website today.' %}</h5>
+                            <a href="{% url 'login' %}" class="btn btn-success btn-block">{% trans 'Sign in again' %}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

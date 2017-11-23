@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 16:05-0200\n"
+"POT-Creation-Date: 2017-11-22 01:19-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,14 +18,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: app/website/templates/registration/login.html:19
+#: app/website/templates/registration/login.html:38
+#: app/website/templates/website/includes/navbar.html:41
+msgid "Login"
+msgstr "Acessar"
+
+#: app/website/templates/website/includes/navbar.html:30
+msgid "Log Out"
+msgstr "Sair"
+
 #: app/website/templates/website/includes/slide.html:17
 #, python-format
 msgid ""
 "More than %(total_lawyers)s independent professionals are available to work "
 "on what you need"
 msgstr ""
-"Mais de %(total_lawyers)s profissionais independentes estão disponíveis para trabalhar "
-"no que você precisar"
+"Mais de %(total_lawyers)s profissionais independentes estão disponíveis para "
+"trabalhar no que você precisar"
 
 #: app/website/templates/website/includes/slide.html:26
 msgid "Hire the best lawyers in the world"
@@ -63,6 +73,14 @@ msgstr "Escolha"
 msgid "Choose the best proposal"
 msgstr "Selecione a melhor proposta"
 
+#: app/website/templates/website/widgets/latest-quotations.html:9
+msgid "Latest Services"
+msgstr "Últimas Ordens de Serviço"
+
+#: app/website/templates/website/widgets/latest-quotations.html:31
+msgid "Read More"
+msgstr "Saiba Mais"
+
 #: seudireito/settings.py:133
 msgid "Brazil"
 msgstr "Brasil"
@@ -71,11 +89,19 @@ msgstr "Brasil"
 msgid "English"
 msgstr "Inglês"
 
-#: seudireito/urls.py:27
+#: seudireito/urls.py:28
+msgid "^login/$"
+msgstr "^acessar/$"
+
+#: seudireito/urls.py:29
+msgid "^logout/$"
+msgstr "^sair/$"
+
+#: seudireito/urls.py:31
 msgid "^lawyer/"
 msgstr "^advogado/"
 
-#: seudireito/urls.py:28
+#: seudireito/urls.py:32
 msgid "^company/"
 msgstr "^empresa/"
 

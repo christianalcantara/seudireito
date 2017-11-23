@@ -17,12 +17,16 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls)
+    url(r'^admin/', admin.site.urls),
 ]
 
 urlpatterns += i18n_patterns(
+    url(_(r'^login/$'), auth_views.login, name='login'),
+    url(_(r'^logout/$'), auth_views.logout, name='logout'),
     url(r'', include('app.website.urls', namespace='website')),
     url(_(r'^lawyer/'), include('app.lawyer.urls', namespace='lawyer')),
     url(_(r'^company/'), include('app.company.urls', namespace='company')),

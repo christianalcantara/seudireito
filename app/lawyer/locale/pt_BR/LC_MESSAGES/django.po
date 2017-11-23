@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 16:05-0200\n"
+"POT-Creation-Date: 2017-11-22 01:19-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,13 +63,35 @@ msgstr "CPF"
 msgid "Email"
 msgstr "Email"
 
-#: app/lawyer/models.py:35
+#: app/lawyer/models.py:35 app/lawyer/models.py:56
 msgid "Lawyer"
 msgstr "Advogado"
 
 #: app/lawyer/models.py:36
 msgid "Lawyers"
 msgstr "Advogados"
+
+#: app/lawyer/models.py:51
+msgid "Quotation"
+msgstr ""
+
+#: app/lawyer/models.py:60
+msgid "Price"
+msgstr ""
+
+#: app/lawyer/models.py:65
+#, fuzzy
+#| msgid "Create my account"
+msgid "Created date"
+msgstr "Criar minha conta"
+
+#: app/lawyer/models.py:71
+msgid "Proposal"
+msgstr ""
+
+#: app/lawyer/models.py:72
+msgid "Proposals"
+msgstr ""
 
 #: app/lawyer/templates/lawyer/create-account.html:19 app/lawyer/views.py:15
 msgid "Create Account"
@@ -78,6 +100,10 @@ msgstr "Registrar-se"
 #: app/lawyer/templates/lawyer/create-account.html:41
 msgid "Create my account"
 msgstr "Criar minha conta"
+
+#: app/lawyer/templates/lawyer/create-account.html:42
+msgid "click here"
+msgstr ""
 
 #: app/lawyer/validators.py:16
 msgid ""

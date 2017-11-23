@@ -1,5 +1,5 @@
 from django import forms
-from .models import Company
+from .models import Company, Quotation
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth import password_validation
 from django.contrib.auth.models import User
@@ -28,3 +28,12 @@ class CompanyCreationForm(LawyerCreationForm):
             company.user = user
             company.save()
         return company
+
+
+class QuotationCreateForm(forms.ModelForm):
+    """
+    A form that create a quotations
+    """
+    class Meta:
+        model = Quotation
+        exclude = ['company', 'state', 'created_date']

@@ -1,0 +1,48 @@
+{% extends 'website/base.html' %}
+{% load static i18n bootstrap3 %}
+
+{% block class_main %}
+    class="main relative bg-img bg-cover overlay bg-color heavy"
+    data-background="{% static 'website/images/banner/bg-03.jpg' %}" data-stellar-background-ratio="0.5"
+{% endblock %}
+
+{% block main %}
+<div class="page-default typo-dark">
+		<!-- Container -->
+		<div class="container">
+			<!-- Row -->
+			<div class="row">
+				<div class="col-md-offset-4 col-md-4 parent-has-overlay">
+					<ul class="template-box box-login">
+						<!-- Page Template Logo -->
+						<li class="logo-wrap  text-center">
+                            <h4 class="slogan">{% trans 'Login' %}</h4>
+                            {% bootstrap_form_errors form error_types='all' %}
+						</li><!-- Page Template Logo -->
+						<!-- Page Template Content -->
+						<li class="template-content text-left">
+							<div class="contact-form">
+								<!-- Form Begins -->
+								<form name="bootstrap-form" method="post" action="{% url 'login' %}">
+									{% csrf_token %}
+                                    {% if next %}
+                                        <input type="hidden" name="next" value="{{ next }}" />
+                                    {% endif %}
+                                    <div class="row">
+                                        {% bootstrap_field form.username form_group_class="input-text form-group" %}
+                                    </div>
+                                    <div class="row">
+                                        {% bootstrap_field form.password form_group_class="input-text form-group" %}
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn btn-block  btn-success" type="submit">{% trans 'Login' %}</button>
+                                    </div>
+								</form><!-- Form Ends -->
+							</div>
+						</li><!-- Page Template Content -->
+					</ul>
+				</div><!-- Column -->
+			</div><!-- Row -->
+		</div><!-- Container -->
+	</div>
+{% endblock %}
