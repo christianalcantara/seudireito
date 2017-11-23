@@ -1,0 +1,47 @@
+{% load static i18n %}
+<header id="header" class="default-header colored flat-menu">
+    <div class="header-top">
+        <div class="container">
+            <nav>
+                <ul class="nav nav-pills nav-top">
+                    <li class="phone">
+                        <span><i class="fa fa-envelope"></i>christian.douglas.alcantara@gmail.com</span>
+                    </li>
+                    <li class="phone">
+                        <span><i class="fa fa-phone"></i>(31)9.9550-4357</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search">
+                <form id="formSetLanguage" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                    <input name="language" type="hidden" value="{{ LANGUAGE_CODE }}"/>
+                    <select class="selectpicker" data-width="fit" data-style="btn btn-primary btn-sm" id="selectLanguage">
+                        {% for language in languages %}
+                            <option {% if language.code == LANGUAGE_CODE %}selected{% endif %}
+                                    data-content='<i class="flag-icon flag-icon-{{ language.code }}"></i> <span style="color: black;" >{{ language.name_local }}</span>'
+                                    name="sel_language"
+                                    value="{{ language.code }}">{{ language.name_local }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="logo">
+            <a href="{% url 'website:index' %}">
+                <img alt="Universh" width="211" height="40" data-sticky-width="150" data-sticky-height="28"
+                     src="{% static 'website/images/default/logo.png' %}">
+            </a>
+        </div>
+        <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+    {% include 'website/includes/navbar.html' %}
+</header>

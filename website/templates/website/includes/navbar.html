@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="navbar-collapse nav-main-collapse collapse">
+		<div class="container">
+			<nav class="nav-main mega-menu">
+				<ul class="nav nav-pills nav-main" id="mainMenu">
+                    <li>
+                        <a class="dropdown-toggle" href="{% url 'website:quotations' %}">
+                            {% trans 'Quotations' %}
+                        </a>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#">
+                                <i class="fa fa-user"></i> {{ user.get_full_name }}
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                {% if user.lawyer %}
+                                    <li><a href="{% url 'lawyer:proposals' %}">{% trans 'Your proposal' %}<span class="tip green">{{ user.lawyer.proposals.all.count }}</span></a></li>
+                                {% elif user.company %}
+                                    <li><a href="{% url 'company:quotations' %}">{% trans 'Your quotations' %}<span class="tip green">{{ user.company.quotations.all.count }}</span></a></li>
+                                    <li><a href="{% url 'company:quotation_create' %}">{% trans 'Create quotation' %}</a></li>
+                                {% endif %}
+                                <li><a href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
+                            </ul>
+                        </li>
+
+                    {% else %}
+                        <li>
+                            <a class="dropdown-toggle" href="{% url 'login' %}">
+                                {% trans 'Login' %}
+                                <i class="fa fa-user"></i>
+                            </a>
+                        </li>
+                    {% endif %}
+				</ul>
+			</nav>
+		</div>
+	</div>
