@@ -33,23 +33,7 @@
                                     <span class="badge badge-info">{{ total_proposals }}</span>
                                 </td>
                                 <td class="text-center">
-                                    <div class="dropdown">
-                                        <button class="btn btn-success btn-sm dropdown-toggle"
-                                                type="button" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="true">
-                                            <i class="fa fa-bars"></i>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li {% if not total_proposals %}class="disabled"{% endif %}>
-                                                <a href="{% if not total_proposals %}javascript:void(0){% else %}{% url 'company:quotation_proposals' quotation.pk %}{% endif %}">{% trans 'View proposals' %}</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Another action</a>
-                                            </li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="#">Separated link</a></li>
-                                        </ul>
-                                    </div>
+                                    <a class="btn btn-success btn-sm {% if not total_proposals %}disabled{% endif %}" href="{% if not total_proposals %}javascript:void(0){% else %}{% url 'company:quotation_proposals' quotation.pk %}{% endif %}">{% trans 'View proposals' %}</a>
                                 </td>
                                 {% endwith %}
 							</tr>
