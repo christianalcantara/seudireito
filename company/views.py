@@ -23,7 +23,7 @@ def createaccount(request):
     }
     return render(
         request,
-        'company/templates/company/create-account.html',
+        'company/create-account.html',
         ctx
     )
 
@@ -37,7 +37,7 @@ def quotations(request):
     }
     return render(
         request,
-        'company/templates/company/quotations.html',
+        'company/quotations.html',
         ctx
     )
 
@@ -62,7 +62,7 @@ def quotation_create(request):
     }
     return render(
         request,
-        'company/templates/company/quotation-create.html',
+        'company/quotation-create.html',
         ctx
     )
 
@@ -94,6 +94,6 @@ def quotation_proposals(request, pk):
     }
     return render(
         request,
-        'company/templates/company/quotation-proposal.html',
+        'company/quotation-proposal.html',
         ctx
     )
