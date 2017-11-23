@@ -4,6 +4,9 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
+debug
+db.sqlite3
+teste.py
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
@@ -151,3 +154,8 @@ venv.bak/
 .mypy_cache/
 
 .idea/
+/debug
+/db.sqlite3
+!/debug
+/seudireito/public/static/admin/
+/seudireito/public/static/website/
